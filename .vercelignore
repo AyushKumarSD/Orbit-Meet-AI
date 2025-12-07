@@ -53,4 +53,6 @@ ENV/
 python3.11.9/
 # Ignore pyproject.toml to force Vercel to use requirements.txt
 pyproject.toml
+# Ignore api directory - backend is deployed on Render, not Vercel
+api/
 
