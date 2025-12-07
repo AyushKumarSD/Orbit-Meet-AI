@@ -2,6 +2,8 @@
   "version": 2,
   "buildCommand": "cd src/frontend && npm install && npm run build",
   "outputDirectory": "src/frontend/dist",
+  "framework": null,
+  "installCommand": "cd src/frontend && npm install",
   "routes": [
     {
       "src": "/(.*\\.(js|css|ico|png|jpg|jpeg|svg|gif|woff|woff2|ttf|eot))",

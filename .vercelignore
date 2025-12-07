@@ -51,8 +51,20 @@ env/
 ENV/
 .venv/
 python3.11.9/
-# Ignore pyproject.toml to force Vercel to use requirements.txt
+# Ignore all Python-related files - backend is on Render
 pyproject.toml
+requirements.txt
+requirements-vercel.txt
+render.yaml
+runtime.txt
 # Ignore api directory - backend is deployed on Render, not Vercel
 api/
+# Ignore Python source files (backend code)
+src/Agentic/
+src/backend/
+src/chatbot/
+src/__pycache__/
+src/orbitmeetai.egg-info/
+*.py
+!src/frontend/
 
