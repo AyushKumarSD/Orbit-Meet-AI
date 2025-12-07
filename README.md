@@ -421,10 +421,24 @@ Key Frontend packages:
 
 ## 📝 Notes
 
-- The scheduler runs hourly to process unprocessed meetings
+- The scheduler runs hourly to process unprocessed meetings (disabled on Vercel)
 - All data is stored in MongoDB collections
 - The chatbot uses RAG with MongoDB vector search
 - Email notifications require SMTP configuration
+
+## 🚀 Deployment
+
+### Deploy to Vercel
+
+This project can be deployed to Vercel for both frontend and backend. See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions.
+
+**Quick Start:**
+1. Push your code to GitHub/GitLab/Bitbucket
+2. Import project in Vercel dashboard
+3. Configure environment variables
+4. Deploy!
+
+**Important:** The background scheduler is automatically disabled on Vercel. Use Vercel Cron Jobs or external services for scheduled tasks.
 
 ## 📄 License
 

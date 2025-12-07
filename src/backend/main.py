@@ -68,15 +68,17 @@ async def lifespan(app: FastAPI):
         send_project_emails,
     )
     
-    # Start background scheduler
-    from src.backend.scheduler import start_scheduler
-    start_scheduler()
+    # Start background scheduler (skip on Vercel - serverless doesn't support persistent processes)
+    if not os.getenv("VERCEL"):
+        from src.backend.scheduler import start_scheduler
+        start_scheduler()
     
     yield
     
-    # Cleanup: Stop scheduler on shutdown
-    from src.backend.scheduler import stop_scheduler
-    stop_scheduler()
+    # Cleanup: Stop scheduler on shutdown (only if it was started)
+    if not os.getenv("VERCEL"):
+        from src.backend.scheduler import stop_scheduler
+        stop_scheduler()
 
 
 # ======================================================================

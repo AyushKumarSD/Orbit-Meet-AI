@@ -26,4 +26,10 @@ dependencies = [
     "node>=1.2.3",
     "npm>=0.1.1",
     "langchain-classic>=1.0.0",
+    "mangum>=0.17.0",
+]
+
+[tool.uv.workspace]
+members = [
+    "python3.11.9",
 ]
