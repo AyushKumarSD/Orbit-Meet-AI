@@ -428,15 +428,16 @@ Key Frontend packages:
 
 ## 📄 License
 
-[Add your license information here]
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👥 Contributors
+
+- **Mohd Sharik** - mohdsharikias99@gmail.com
+- **Ayush Kumar** - ayushkr.work@gmail.com
 
 ## 🤝 Contributing
 
 [Add contribution guidelines here]
-
-## 📧 Support
-
-[Add support/contact information here]
 
 ---
 
