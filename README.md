@@ -428,17 +428,32 @@ Key Frontend packages:
 
 ## 🚀 Deployment
 
-### Deploy to Vercel
+### Recommended: Split Deployment (Frontend + Backend)
 
-This project can be deployed to Vercel for both frontend and backend. See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions.
+**Frontend on Vercel + Backend on Render** (Recommended for free tier)
+
+This setup provides:
+- ✅ No function size limits
+- ✅ Persistent processes (scheduler works)
+- ✅ Better performance
+- ✅ Free tier available
 
 **Quick Start:**
-1. Push your code to GitHub/GitLab/Bitbucket
-2. Import project in Vercel dashboard
-3. Configure environment variables
-4. Deploy!
+1. **Backend (Render)**: See [RENDER_DEPLOYMENT.md](RENDER_DEPLOYMENT.md)
+   - Deploy FastAPI backend to Render
+   - Get your backend URL
 
-**Important:** The background scheduler is automatically disabled on Vercel. Use Vercel Cron Jobs or external services for scheduled tasks.
+2. **Frontend (Vercel)**: See [SPLIT_DEPLOYMENT_GUIDE.md](SPLIT_DEPLOYMENT_GUIDE.md)
+   - Deploy React frontend to Vercel
+   - Set `VITE_API_URL` environment variable to your Render backend URL
+
+**Full Guide**: See [SPLIT_DEPLOYMENT_GUIDE.md](SPLIT_DEPLOYMENT_GUIDE.md) for complete instructions.
+
+### Alternative: Full Stack on Vercel
+
+You can also deploy both frontend and backend on Vercel. See [DEPLOYMENT.md](DEPLOYMENT.md) for details.
+
+**Note:** The background scheduler is automatically disabled on Vercel. Use Vercel Cron Jobs or external services for scheduled tasks.
 
 ## 📄 License
 

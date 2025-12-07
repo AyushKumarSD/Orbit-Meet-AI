@@ -1,7 +1,8 @@
 import axios from 'axios';
 
-// Use /api in production (Vercel routes), proxy in development
-const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
+// Use environment variable for backend URL (Render), fallback to localhost for dev
+const API_BASE_URL = import.meta.env.VITE_API_URL || 
+  (import.meta.env.DEV ? 'http://localhost:8000' : 'https://your-backend.onrender.com');
 
 const api = axios.create({
   baseURL: API_BASE_URL,

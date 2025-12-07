@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: orbitmeetai-backend
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn src.backend.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: GROQ_API_KEY
+        sync: false
+      - key: MONGO_URI
+        sync: false
+      - key: VOYAGE_API_KEY
+        sync: false
+      - key: SMTP_EMAIL
+        sync: false
+        optional: true
+      - key: SMTP_PASSWORD
+        sync: false
+        optional: true
+      - key: SMTP_SERVER
+        value: smtp.gmail.com
+        optional: true
+      - key: SMTP_PORT
+        value: 465
+        optional: true
+      - key: PARTICIPANT_DB_PATH
+        value: SampleData/participants_database.csv
+        optional: true
+
