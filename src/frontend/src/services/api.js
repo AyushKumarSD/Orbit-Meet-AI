@@ -1,8 +1,7 @@
 import axios from 'axios';
 
-// Use proxy in development, direct URL in production
-const API_BASE_URL = import.meta.env.VITE_API_URL || 
-  (import.meta.env.DEV ? '/api' : 'http://localhost:8000');
+// Use /api in production (Vercel routes), proxy in development
+const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
