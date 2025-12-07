@@ -1,25 +1,40 @@
-# Minimal requirements for Vercel deployment
-# This file takes precedence over pyproject.toml when no lockfile exists
-# Only includes packages actually used in the API endpoints
+# Requirements for Render deployment (backend)
+# Includes all packages needed for FastAPI backend with persistent processes
 
+# Core FastAPI and server
 fastapi>=0.115.0
-mangum>=0.17.0
+uvicorn[standard]>=0.30.0
 pydantic>=2.0.0
+
+# Environment and config
 python-dotenv>=1.2.1
+
+# LangChain
 langchain>=1.1.0
 langchain-text-splitters>=0.2.0
 langchain-groq>=1.1.0
 langchain-classic>=1.0.0
+
+# Database
 pymongo>=4.15.4
+
+# HTTP requests
 requests>=2.31.0
+
+# Utilities
 loguru>=0.7.3
 jinja2>=3.1.6
 rapidfuzz>=3.14.3
 
-# Excluded to reduce size (API receives text, not files):
-# - ollama, pdfplumber, python-docx, docx2txt (file processing)
+# Scheduler (works on Render with persistent processes)
+apscheduler>=3.10.0
+
+# Note: Excluded packages (not needed for API):
+# - ollama (not used in API)
+# - pdfplumber (API receives text, not PDFs)
+# - python-docx (API receives text, not DOCX)
+# - docx2txt (API receives text, not DOCX)
 # - langchain-google-genai (only using Groq)
-# - uvicorn (mangum handles it)
-# - apscheduler (not used on Vercel)
+# - mangum (only needed for Vercel serverless)
 # - node/npm (not needed for Python)
 
