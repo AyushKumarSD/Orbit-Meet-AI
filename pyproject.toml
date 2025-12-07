@@ -29,7 +29,9 @@ dependencies = [
     "mangum>=0.17.0",
 ]
 
-[tool.uv.workspace]
-members = [
-    "python3.11.9",
-]
+# Workspace configuration disabled for Vercel deployment
+# Vercel uses requirements.txt instead
+# [tool.uv.workspace]
+# members = [
+#     "python3.11.9",
+# ]

@@ -50,4 +50,5 @@ venv/
 env/
 ENV/
 .venv/
+python3.11.9/
 
