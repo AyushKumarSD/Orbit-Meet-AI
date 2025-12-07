@@ -1,26 +1,25 @@
-# Requirements file for Vercel deployment
-# This file is auto-generated from pyproject.toml dependencies
-# For Vercel, we need a requirements.txt file
+# Minimal requirements for Vercel deployment
+# This file takes precedence over pyproject.toml when no lockfile exists
+# Only includes packages actually used in the API endpoints
 
-python-docx
-ollama>=0.6.1
-pdfplumber>=0.10.3
-docx>=0.2.4
-langchain-google-genai>=3.2.0
+fastapi>=0.115.0
+mangum>=0.17.0
+pydantic>=2.0.0
 python-dotenv>=1.2.1
 langchain>=1.1.0
 langchain-text-splitters>=0.2.0
 langchain-groq>=1.1.0
-requests>=2.31.0
-numpy>=1.24.0
+langchain-classic>=1.0.0
 pymongo>=4.15.4
-rapidfuzz>=3.14.3
-docx2txt>=0.9
+requests>=2.31.0
 loguru>=0.7.3
 jinja2>=3.1.6
-fastapi>=0.115.0
-uvicorn[standard]>=0.30.0
-apscheduler>=3.10.0
-langchain-classic>=1.0.0
-mangum>=0.17.0
+rapidfuzz>=3.14.3
+
+# Excluded to reduce size (API receives text, not files):
+# - ollama, pdfplumber, python-docx, docx2txt (file processing)
+# - langchain-google-genai (only using Groq)
+# - uvicorn (mangum handles it)
+# - apscheduler (not used on Vercel)
+# - node/npm (not needed for Python)
 

@@ -51,4 +51,6 @@ env/
 ENV/
 .venv/
 python3.11.9/
+# Ignore pyproject.toml to force Vercel to use requirements.txt
+pyproject.toml
 
