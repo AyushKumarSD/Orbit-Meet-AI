@@ -59,6 +59,12 @@ Before deploying, you'll need to set up environment variables in Vercel:
    - **Root Directory**: `./` (project root)
    - **Build Command**: `cd src/frontend && npm install && npm run build`
    - **Output Directory**: `src/frontend/dist`
+   
+   **Note**: 
+   - **Frontend**: Will be BUILT (compiled to static files) - you don't need to run it
+   - **Backend**: Will be automatically packaged as serverless functions - you don't need to run it
+   - Vercel handles everything automatically based on `vercel.json`
+   
 5. **Add Environment Variables**:
    - Click "Environment Variables"
    - Add all required variables (see Step 3)

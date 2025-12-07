@@ -1,0 +1,25 @@
+# Minimal requirements for Vercel serverless functions
+# This file in the api/ directory takes precedence over root requirements.txt
+# Only includes packages actually used in the API endpoints
+
+fastapi>=0.115.0
+mangum>=0.17.0
+pydantic>=2.0.0
+python-dotenv>=1.2.1
+langchain>=1.1.0
+langchain-text-splitters>=0.2.0
+langchain-groq>=1.1.0
+langchain-classic>=1.0.0
+pymongo>=4.15.4
+requests>=2.31.0
+loguru>=0.7.3
+jinja2>=3.1.6
+rapidfuzz>=3.14.3
+
+# Excluded to reduce size (API receives text, not files):
+# - ollama, pdfplumber, python-docx, docx2txt (file processing)
+# - langchain-google-genai (only using Groq)
+# - uvicorn (mangum handles it)
+# - apscheduler (not used on Vercel)
+# - node/npm (not needed for Python)
+
